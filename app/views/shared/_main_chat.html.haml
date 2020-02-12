@@ -1,0 +1,31 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %p.main-header__left-box__current-group dbを設計する会
+      %ul.main-header__left-box__member-list 
+        Member:
+        %li.main-header__left-box__member-list 
+        kiki
+    .main-header__edit-btn
+      = link_to "#",class:"edit-btn" do
+        Edit
+ 
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker kiki 
+
+        %p.message__upper-info__data 2020/02/11(Tue) 09:47:03
+         
+      %p.message__taxt おはよう
+        
+
+
+  .form
+    %form.new_message
+      .input-box
+        %input{type: "text",class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon("fas", "image")
+          %input{type: "file",class:"input-box__image__file"}
+      %input{type: "submit",class: "submit-btn", value: "Send"}

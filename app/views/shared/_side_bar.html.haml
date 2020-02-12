@@ -1,0 +1,18 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name  kiki
+      %ul.side-header__box__manu
+        %li.side-header__box__new-group
+          = link_to"#", class: "side-header__box__manu side-header__box__new-group" do
+            = icon("fas","edit")
+        %li.side-header__box__edit-user
+          = link_to"#", class: "side-header__box__manu side-header__box__edit-user"do
+            = icon("fas","cog")
+            
+  .groups
+    = link_to "#",class:"group"do
+      %p.group__group-name  dbを設計する会
+          
+      %p.group__latest-message まだメッセージはありません
+    
