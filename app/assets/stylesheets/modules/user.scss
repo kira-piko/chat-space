@@ -1,5 +1,5 @@
 .account-page {
-  .account-page__inner {
+  &__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
@@ -18,7 +18,7 @@
     }
   }
 
-  .account-page__header {
+  &__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
