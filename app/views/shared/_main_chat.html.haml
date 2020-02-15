@@ -1,31 +1,25 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %p.main-header__left-box__current-group dbを設計する会
+      %p.main-header__left-box__current-group 
+        =@group.name
       %ul.main-header__left-box__member-list 
         Member:
-        %li.main-header__left-box__member-list 
-        kiki
+        - @group.users.each do |user|
+          %li.main-header__left-box__member-list 
+            =user.name
     .main-header__edit-btn
-      = link_to "#",class:"edit-btn" do
+      = link_to edit_group_path(@group),class:"edit-btn" do
         Edit
  
   .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker kiki 
-
-        %p.message__upper-info__data 2020/02/11(Tue) 09:47:03
-         
-      %p.message__taxt おはよう
-        
-
+    = render @messages
 
   .form
-    %form.new_message
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text",class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon("fas", "image")
-          %input{type: "file",class:"input-box__image__file"}
-      %input{type: "submit",class: "submit-btn", value: "Send"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
