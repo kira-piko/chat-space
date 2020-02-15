@@ -26,7 +26,7 @@
     }
     
     li{      
-      color: yellow;
+      color: #999999;
      }      
   }
   &__edit-btn{
@@ -82,7 +82,7 @@
     form{
       display: flex;
       .input-box{
-        display: flex;
+        // display: flex;
         position: relative;
         width: 100%;
 
